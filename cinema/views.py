@@ -34,7 +34,7 @@ class GenreList(APIView):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
-class GenreDetailView(APIView):
+class GenreDetail(APIView):
     def get_object(self, pk):
         return get_object_or_404(Genre, pk=pk)
 
@@ -72,7 +72,7 @@ class ActorList(GenericAPIView, ListModelMixin, CreateModelMixin):
         return self.create(request)
 
 
-class ActorDetailView(
+class ActorDetail(
     GenericAPIView, RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin
 ):
     queryset = Actor.objects.all()
