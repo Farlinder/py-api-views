@@ -1,4 +1,3 @@
-from rest_framework.decorators import api_view
 from rest_framework.generics import GenericAPIView, RetrieveAPIView
 from rest_framework.mixins import (
     ListModelMixin,
