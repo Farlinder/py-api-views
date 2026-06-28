@@ -21,7 +21,7 @@ from cinema.serializers import (
 )
 
 
-class GenreListView(APIView):
+class GenreList(APIView):
     def get(self, request):
         genres = Genre.objects.all()
         serializer = GenreSerializer(genres, many=True)
@@ -61,7 +61,7 @@ class GenreDetailView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class ActorListView(GenericAPIView, ListModelMixin, CreateModelMixin):
+class ActorList(GenericAPIView, ListModelMixin, CreateModelMixin):
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
 
